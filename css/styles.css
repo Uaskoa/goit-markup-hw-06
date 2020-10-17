@@ -81,6 +81,7 @@ img {
   width: 528px;
   height: 581px;
   background-color: #ffffff;
+  padding: 40px;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 500ms;
 }
 
@@ -94,6 +95,11 @@ img {
   background-color: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
+}
+
+.close-btn:hover .close-btn-svg,
+.close-btn:focus .close-btn-svg {
+  fill: var(--accent-color);
 }
 
 .close-btn-svg {
@@ -631,9 +637,6 @@ img {
   margin-right: 93px;
 }
 
-.subscribe {
-}
-
 .footer-form {
   display: flex;
 }
@@ -651,6 +654,7 @@ img {
 }
 
 .footer-form .form-input::placeholder {
+  font-family: var(--main-font);
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -659,7 +663,8 @@ img {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.footer-form-btn {
+.footer-form-btn,
+.modal-form-btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -825,3 +830,160 @@ img {
 }
 
 /* ======= END PORTFOLIO====== */
+
+/* ======= MODAL FORM====== */
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+}
+.modal-form-wrapper {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.modal-form-btn {
+  align-self: center;
+}
+
+.modal-title {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--main-title-color);
+  margin-bottom: 12px;
+}
+
+.modal-form-input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding-left: 42px;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-message {
+  width: 100%;
+  height: 120px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  resize: none;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 20px;
+}
+
+.modal-form-input-svg {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-input:focus,
+.modal-form-input:hover,
+.modal-form-message:focus,
+.modal-form-message:hover {
+  outline: none;
+  border-color: var(--accent-color);
+  cursor: pointer;
+}
+
+.modal-form-input:focus + .modal-form-input-svg,
+.modal-form-input:hover + .modal-form-input-svg {
+  fill: var(--accent-color);
+}
+
+.modal-form-label {
+  display: inline-block;
+  margin-bottom: 4px;
+  font-family: var(--main-font);
+
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.167;
+  letter-spacing: 0.01em;
+
+  color: var(--main-descriprion-color);
+}
+
+.modal-form-message::placeholder {
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.167;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+  padding-top: 12px;
+  padding-left: 16px;
+}
+
+.modal-form-policy {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.modal-form-policy-label {
+  display: flex;
+  align-items: center;
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.714;
+  letter-spacing: 0.03em;
+  margin-bottom: 30px;
+
+  color: var(--main-descriprion-color);
+}
+
+.modal-form-policy-label::before {
+  display: inline-block;
+  content: "";
+  width: 16px;
+  height: 15px;
+  border: 2px solid #212121;
+  border-radius: 2px;
+  margin-right: 7px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-image 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-policy:checked + .modal-form-policy-label::before {
+  background-image: url("../images/svg/check.svg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-color: var(--accent-color);
+  border: 2px solid #2196f3;
+}
+
+.modal-form-policy-wparrer {
+  display: flex;
+  align-items: center;
+}
+
+.modal-form-policy-label a {
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.714;
+  letter-spacing: 0.03em;
+  text-decoration-line: underline;
+
+  color: var(--accent-color);
+}
+
+/* ======= END MODAL FORM====== */
